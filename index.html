@@ -1,23 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiniKart - Pure JS eCommerce</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-  <h1>🛒 Welcome to MiniKart</h1>
-  <div class="products" id="products"></div>
+  <div class="container">
+    <h1>MiniKart</h1>
+    <div class="products" id="products"></div>
 
-  <script>
-    // Load products dynamically
-    fetch('data.json')
-      .then(res => res.json())
-      .then(products => {
-        const container = document.getElementById('products');
-        products.forEach(p => {
-          container.innerHTML += `
-            <div class="product">
-              <img src="${p.image}" alt="${p.name}">
-              <h3>${p.name}</h3>
-              <p>₹${p.price}</p>
-              <button onclick="addToCart(${p.id})">Add to Cart</button>
-            </div>
-          `;
-        });
-      });
-  </script>
+    <h2>Cart</h2>
+    <div id="cart" class="cart-empty">Your cart is empty</div>
+
+    <button id="checkoutBtn" disabled>Checkout</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+</html>
